@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <script src="/sketch.js"></script>
+    <style>
+      body{
+        margin: 0;
+        animation: roll 3s infinite;
+        background-color: black;
+      }
+      @keyframes roll {
+        0% {
+          transform: rotate(0) scale(4);
+          
+        }
+        100% {
+          transform: rotate(360deg) scale(4);
+          
+        }
+      }
+    </style>
+  </body>
+</html>
