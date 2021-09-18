@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  </head>
+  <body>
+    <div id="calculator" style="width: 100vw; height: 100vh"></div>
+    <script>
+      var elt = document.getElementById("calculator");
+      var calculator = Desmos.GraphingCalculator(elt, {
+        keypad: false,
+        settingsMenu: false,
+        expressions: true,
+        zoomButtons: false,
+      });
+      // variables
+      calculator.setMathBounds({
+        left: -10,
+        right: 10,
+        bottom: -10,
+        top: 10,
+      });
+      Pusher.logToConsole = true;
+
+      var pusher = new Pusher("9e9ba095c4dd756509de", {
+        cluster: "ap1",
+      });
+
+      var channel = pusher.subscribe("main-channel");
+      channel.bind("sine-update", function (data) {
+        updateGraph(data);
+      });
+      updateGraph({
+        externalMultiplier: 1,
+        internalMultiplier: 1,
+        externalAddition: 0,
+        internalAddition: 0,
+      });
+      function updateGraph({
+        externalMultiplier,
+        internalMultiplier,
+        externalAddition,
+        internalAddition,
+      }) {
+        calculator.setExpression({
+          id: "1",
+          latex: `y=(\\sin(${internalMultiplier}x))`,
+          color: calculator.colors.customBlue,
+        });
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
