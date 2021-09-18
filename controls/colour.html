@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
+    />
+  </head>
+  <body>
+    <div style="width: 90vw;">
+      <h1 style="text-align: center; font-size: 120px; margin-top: 0px;">Change the colour!</h1>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr)">
+        <button onclick="updateColour('RED')">
+          <div
+            style="
+              padding-bottom: 100%;
+              width: 100%;
+              background-color: #ec3750;
+              border-radius: 6px;
+            "
+          ></div>
+          <h1>Red</h1>
+        </button>
+        <button onclick="updateColour('GREEN')">
+          <div
+            style="
+              padding-bottom: 100%;
+              width: 100%;
+              background-color: #33d6a6;
+              border-radius: 6px;
+            "
+          ></div>
+          <h1>Green</h1>
+        </button>
+        <button onclick="updateColour('BLUE')">
+          <div
+            style="
+              padding-bottom: 100%;
+              width: 100%;
+              background-color: #338eda;
+              border-radius: 6px;
+            "
+          ></div>
+          <h1>Blue</h1>
+        </button>
+        <button onclick="updateColour('RAINBOW')">
+          <div
+            style="
+              padding-bottom: 100%;
+              width: 100%;
+              background: linear-gradient(
+                311deg,
+                rgba(236, 55, 80, 0.4) 0%,
+                rgba(51, 214, 166, 0.4) 50%,
+                rgba(51, 142, 218, 0.4) 100%
+              );
+              border-radius: 6px;
+              font-size: 160px;
+              position: relative;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                font-size: 100px;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <div>🌈</div>
+            </div>
+          </div>
+          <h1>Rainbow</h1>
+        </button>
+      </div>
+    </div>
+    <style>
+      body {
+        max-width: 90vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0px auto;
+      }
+      button {
+        padding: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+      h1 {
+        font-weight: 800;
+      }
+    </style>
+    <script>
+      function updateColour(colour){
+        fetch(`/api/events/colour-update?colour=${colour}`)
+      }
+    </script>
+  </body>
+</html>
