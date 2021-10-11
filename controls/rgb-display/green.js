@@ -15,5 +15,5 @@ slider.noUiSlider.on('update', function (values, handle) {
     for (var i = 0; i < all.length; i++) {
       all[i].style.background = `rgb(0, ${values[handle]}, 0)`;
     }
-    fetch(`/api/events/rgb-update?colour=green&value${values[handle]}`)
+    fetch(`/api/events/rgb-update?colour=green&value=${values[handle]}`)
 });
