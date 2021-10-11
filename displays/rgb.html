@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="theme-color">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
+    />
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
   </head>
-  <body>
+  <body style="height: 100vh; margin: 0px; padding: 0px;">
+    <div style="bottom: 140px; position: absolute; text-align: center; width: 100%;">
+      <h1 style="font-weight: 800; text-align: center; font-size: 4em;" id="header">Hi!</h1>
+    </div>
     <script>
-      
       Pusher.logToConsole = true;
 
-      let backgroundColour = [0, 0, 0]
+      let backgroundColour = [0, 0, 0];
 
       var pusher = new Pusher("9e9ba095c4dd756509de", {
         cluster: "ap1",
@@ -18,16 +25,28 @@
 
       var channel = pusher.subscribe("main-channel");
       channel.bind("red-update", function (data) {
-        backgroundColour[0] = data.colour
-        document.body.style.background = `rgb(${backgroundColour.join(',')})`
+        backgroundColour[0] = data.colour;
+        document.body.style.background = `rgb(${backgroundColour.join(",")})`;
+        document.getElementById('header').innerText = backgroundColour.join(", ")
+        document
+          .querySelector("meta[name=theme-color]")
+          .setAttribute("content", `rgb(${backgroundColour.join(",")})`);
       });
       channel.bind("green-update", function (data) {
-        backgroundColour[1] = data.colour
-        document.body.style.background = `rgb(${backgroundColour.join(',')})`
+        backgroundColour[1] = data.colour;
+        document.body.style.background = `rgb(${backgroundColour.join(",")})`;
+        document.getElementById('header').innerText = backgroundColour.join(", ")
+        document
+          .querySelector("meta[name=theme-color]")
+          .setAttribute("content", `rgb(${backgroundColour.join(",")})`);
       });
       channel.bind("blue-update", function (data) {
-        backgroundColour[2] = data.colour
-        document.body.style.background = `rgb(${backgroundColour.join(',')})`
+        backgroundColour[2] = data.colour;
+        document.body.style.background = `rgb(${backgroundColour.join(",")})`;
+        document.getElementById('header').innerText = backgroundColour.join(", ")
+        document
+          .querySelector("meta[name=theme-color]")
+          .setAttribute("content", `rgb(${backgroundColour.join(",")})`);
       });
     </script>
     <style>
