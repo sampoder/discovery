@@ -9,9 +9,7 @@ const pusher = new Pusher({
 });
 
 export default async function handler(req, res){
-  console.log({...req.body})
-  let pusherResponse = await pusher.trigger("main-channel", "sine-update", req.body);
-  console.log(await pusherResponse.json())
+  await pusher.trigger("main-channel", "sine-update", req.body);
   res.send('Success.')
 }
 

@@ -9,9 +9,7 @@ const pusher = new Pusher({
 });
 
 export default async function handler(req, res){
-  console.log({...req.body})
-  let pusherResponse = await pusher.trigger("main-channel", "colour-update", {colour: req.query.colour});
-  console.log(await pusherResponse.json())
+  await pusher.trigger("main-channel", "colour-update", {colour: req.query.colour});
   res.send('Success.')
 }
 
