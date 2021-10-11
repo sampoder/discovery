@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  </head>
+  <body>
+    <script>
+      
+      Pusher.logToConsole = true;
+
+      let backgroundColour = [0, 0, 0]
+
+      var pusher = new Pusher("9e9ba095c4dd756509de", {
+        cluster: "ap1",
+      });
+
+      var channel = pusher.subscribe("main-channel");
+      channel.bind("red-update", function (data) {
+        backgroundColour[0] = data.colour
+        document.body.style.background = `rgb(${backgroundColour.join(',')})`
+      });
+      channel.bind("green-update", function (data) {
+        backgroundColour[1] = data.colour
+        document.body.style.background = `rgb(${backgroundColour.join(',')})`
+      });
+      channel.bind("blue-update", function (data) {
+        backgroundColour[2] = data.colour
+        document.body.style.background = `rgb(${backgroundColour.join(',')})`
+      });
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
