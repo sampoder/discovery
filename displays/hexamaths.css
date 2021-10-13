@@ -1,0 +1,63 @@
+body {
+  margin: 0px!important;
+  padding: 0px!important;
+  max-width: none!important;
+}
+
+.holder{
+  height: 50vh; 
+  display: flex;
+}
+
+.header-holder{
+  width: calc(53px + 48px)
+}
+
+.header{
+  font-weight: 800; 
+  font-size: 2.4em; 
+  height: 50vh; 
+  text-align: center; 
+  margin: 0px; 
+  margin-left: 24px; 
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.nodes-holder{
+  flex-grow: 1; 
+  align-items: center; 
+  display: flex; 
+  justify-content: center
+}
+
+.node {
+  background: linear-gradient(90deg, rgba(23,23,29,0.75) 70%, rgba(23,23,29,0.75) 100%); 
+  margin: auto; 
+  min-width: 25vw; 
+  padding: 24px 36px; 
+  border-radius: 8px
+}
+
+.answer-node{
+  min-width: 10vw; 
+}
+
+#question {
+  margin: 0px; 
+  font-size: 4.5em; 
+  text-align: center;
+}
+
+.answer{
+  margin: 0px; 
+  font-size: 5.5em; 
+  text-align: center;
+}
+
+#my-canvas {
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  z-index: 500;
+}
