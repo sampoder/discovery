@@ -5,17 +5,22 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <form action="/api/events/sine-update" method="POST" style="padding: 32px" target="frame">
-      External Multiplier: 
+    <form
+      action="/api/events/sine-update"
+      method="POST"
+      style="padding: 32px"
+      target="frame"
+    >
+      External Multiplier:
       <input name="externalMultiplier" type="number" /> <br />
-      Internal Multiplier: 
+      Internal Multiplier:
       <input name="internalMultiplier" type="number" /> <br />
-      External Addition: 
+      External Addition:
       <input name="externalAddition" type="number" /> <br />
-      Internal Addition: 
+      Internal Addition:
       <input name="internalAddition" type="number" /> <br />
       <button>Submit!</button>
-    </form> 
+    </form>
     <iframe name="frame"></iframe>
     <style>
       body {

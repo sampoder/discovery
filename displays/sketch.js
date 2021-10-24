@@ -1,6 +1,6 @@
 const slices = 14;
 
-let volume = 0.20
+let volume = 0.2;
 
 var shape, mask, img;
 
@@ -40,8 +40,8 @@ function mousePressed() {
           values += array[i];
         }
         var average = values / length;
-        volume = (Math.round(average) / 100);
-        console.log(volume)
+        volume = Math.round(average) / 100;
+        console.log(volume);
       };
     })
     .catch(function (err) {
@@ -57,7 +57,7 @@ function draw() {
 
 function drawShapes(energy) {
   let numShapes = energy * 600;
-  console.log(numShapes)
+  console.log(numShapes);
   for (var i = 0; i < numShapes; i++) {
     switch (currentColourMode) {
       case "RED":

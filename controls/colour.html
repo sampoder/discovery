@@ -9,8 +9,10 @@
     />
   </head>
   <body>
-    <div style="width: 90vw;">
-      <h1 style="text-align: center; font-size: 120px; margin-top: 0px;">Change the colour!</h1>
+    <div style="width: 90vw">
+      <h1 style="text-align: center; font-size: 120px; margin-top: 0px">
+        Change the colour!
+      </h1>
       <div style="display: grid; grid-template-columns: repeat(4, 1fr)">
         <button onclick="updateColour('RED')">
           <div
@@ -99,8 +101,8 @@
       }
     </style>
     <script>
-      function updateColour(colour){
-        fetch(`/api/events/colour-update?colour=${colour}`)
+      function updateColour(colour) {
+        fetch(`/api/events/colour-update?colour=${colour}`);
       }
     </script>
   </body>
