@@ -14,6 +14,7 @@
 <body>
 	<script>
 		let mic, fft;
+		let paused = false;
 
     function setup() {
       createCanvas(windowWidth, windowHeight);
@@ -24,43 +25,49 @@
     }
 
     function draw() {
-      background(200);
-      let spectrum = fft.analyze();
-      let waveform = fft.waveform(); 
-      strokeWeight(1.4);
-      noStroke();
-      fill('#5bc0de');
-      rect(0, 0, windowWidth, height/2);
-      fill('#33d6a6');
-      rect(0, height/2, windowWidth, height/2);
-      fill(255);
-      rect(20, 20, 55, 55, 10);
-      noFill();
-      stroke(0);
-      beginShape();
-      for (i = 0; i < waveform.length; i++) {
-        vertex(i * (windowWidth / waveform.length), map(waveform[i], -1, 1, height/2, 0));
+      if(!paused){
+	      background(200);
+	      let spectrum = fft.analyze();
+	      let waveform = fft.waveform(); 
+	      strokeWeight(1.4);
+	      noStroke();
+	      fill('#5bc0de');
+	      rect(0, 0, windowWidth, height/2);
+	      fill('#33d6a6');
+	      rect(0, height/2, windowWidth, height/2);
+	      fill(255);
+	      rect(20, 20, 55, 55, 10);
+	      noFill();
+	      stroke(0);
+	      beginShape();
+	      for (i = 0; i < waveform.length; i++) {
+		vertex(i * (windowWidth / waveform.length), map(waveform[i], -1, 1, height/2, 0));
+	      }
+	      endShape(); 
+	      strokeWeight(1);
+	      beginShape();
+	      for (i = 0; i < spectrum.length; i++) {
+		vertex(i * (windowWidth / spectrum.length), map(spectrum[i], 0, 255, height/2, 0)+(height/2));
+	      }
+	      endShape();
+	      noStroke();
+	      textFont("system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif");
+	      fill(255);
+	      rect(20, 20, 155, 55, 10);
+	      fill(0);
+	      textSize(32);
+	      text('Pre-FFT', 40, 60);
+	      fill(255);
+	      rect(20, 20+(height/2), 155, 55, 10);
+	      fill(0);
+	      textSize(32);
+	      text('Post-FFT', 33, 60+(height/2));
       }
-      endShape(); 
-      strokeWeight(1);
-      beginShape();
-      for (i = 0; i < spectrum.length; i++) {
-        vertex(i * (windowWidth / spectrum.length), map(spectrum[i], 0, 255, height/2, 0)+(height/2));
-      }
-      endShape();
-      noStroke();
-      textFont("system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif");
-      fill(255);
-      rect(20, 20, 155, 55, 10);
-      fill(0);
-      textSize(32);
-      text('Pre-FFT', 40, 60);
-      fill(255);
-      rect(20, 20+(height/2), 155, 55, 10);
-      fill(0);
-      textSize(32);
-      text('Post-FFT', 33, 60+(height/2));
     }
+    function keyPressed() {
+	  paused = !paused;
+	  return false; // prevent any default behaviour
+	}
 	</script>
   <style>
     body {
