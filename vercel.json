@@ -1,0 +1,6 @@
+{
+  "github": {"silent": true},
+  "redirects": [
+    { "source": "/set-colour/:colour", "destination": "/api/events/colour-update" }
+  ]
+}
