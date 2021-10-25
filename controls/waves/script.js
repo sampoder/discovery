@@ -20,7 +20,7 @@ for (let x = 0; x < sliders.length; x++) {
     connect: 'lower',
     range: {
       'min': 0,
-      'max': 255
+      'max': sliders[x] == 'int-multi' ? 20 : 255
     }
   });
 
