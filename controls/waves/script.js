@@ -27,7 +27,7 @@ for (let x = 0; x < sliders.length; x++) {
   slider.noUiSlider.on('update', function (values, handle) {
     document.getElementById(sliders[x] + "-text").innerText = Math.round(values[handle])
     data[sliders[x]] = values[handle]
-    fetch(`/api/events/sine-update?ex-multi=${data['ex-multi']}&int-multi=${data['int-multi']}&int-add=${data['int-add']}&ex-add=${data['ex-add']}`)
+    fetch(`/api/events/wave-update?currentState=${currentState}&ex-multi=${data['ex-multi']}&int-multi=${data['int-multi']}&int-add=${data['int-add']}&ex-add=${data['ex-add']}`)
   });
 
 }

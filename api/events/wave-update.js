@@ -9,7 +9,7 @@ const pusher = new Pusher({
 });
 
 export default async function handler(req, res) {
-  await pusher.trigger("main-channel", "sine-update", {...req.query});
+  await pusher.trigger("main-channel", `${req.query.currentState}-update`, {...req.query});
   console.log({...req.query})
   res.send("Success.");
 }
