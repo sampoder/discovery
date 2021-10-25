@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="nouislider.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="nouislider.js"></script>
+  </head>
+
+  <body>
+    <div
+      style="
+        height: 21vh;
+        padding: 3vh;
+        font-size: 2em;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <h1
+        style="margin-block-start: 0em; margin-block-end: 0em; font-size: 2em"
+      >
+        <span style="color: #ec3750" id="ex-multi-text">255</span
+        ><span style="display: inline-block; transform: rotate(45deg)">+</span
+        >sin(<span style="color: #ff8c37" id="int-multi-text">1</span> +
+        <span style="color: #33d6a6" id="int-add-text">0</span>) +
+        <span style="color: #338eda" id="ex-add-text">0</span>
+      </h1>
+    </div>
+    <div style="background: #121217; padding: 3vh 0vh">
+      <div id="ex-multi"></div>
+      <div id="int-multi"></div>
+      <div id="int-add"></div>
+      <div id="ex-add"></div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

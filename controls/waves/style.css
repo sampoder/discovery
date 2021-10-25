@@ -1,0 +1,65 @@
+.noUi-horizontal {
+  height: 17vh!important;
+  margin: 0vh 3vh;
+  padding: 3vh 0vh;
+  background: #121217;
+}
+
+.noUi-target {
+background: none;
+border-radius: 48px;
+border: none;
+box-shadow: none;
+}
+
+#ex-multi-text{
+  margin-right: 10px;
+}
+
+body{
+  background: #1f2d3d;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Segoe UI Emoji,Apple Color Emoji,Noto Color Emoji,sans-serif;
+  color: #fff
+}
+
+.noUi-handle:before, .noUi-handle:after {
+  background: none!important;
+}
+
+.noUi-horizontal .noUi-handle{
+  height: 14vh!important;
+  background: none;
+  box-shadow: none!important;
+  border: none!important;
+  top: 0!important;
+}
+
+.noUi-target{
+  border-width: 0px!important;
+  border-radius: 0px!important;
+  
+}
+
+.noUi-connects {
+  background: #121217;
+}
+
+body {
+  margin: 0;
+}
+
+#ex-multi > .noUi-base > .noUi-connects > .noUi-connect{
+  background: #ec3750;
+}
+
+#int-multi > .noUi-base > .noUi-connects > .noUi-connect{
+  background: #ff8c37;
+}
+
+#int-add > .noUi-base > .noUi-connects > .noUi-connect{
+  background: #33d6a6;
+}
+
+#ex-add > .noUi-base > .noUi-connects > .noUi-connect{
+  background: #338eda;
+}
