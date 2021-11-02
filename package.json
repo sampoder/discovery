@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "pusher": "^5.0.0"
+    "pusher": "^5.0.0",
+    "spotify-web-api-node": "^5.0.2"
   }
 }
