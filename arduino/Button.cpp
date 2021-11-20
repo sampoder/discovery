@@ -1,3 +1,5 @@
+// Sourced from https://www.circuito.io. FYI: GPL-3 applies to this file.
+
 #include "Button.h"
 
 #include <Arduino.h>
