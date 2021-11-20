@@ -1,6 +1,7 @@
+// Sourced from https://www.circuito.io. FYI: GPL-3 applies to this file.
+
 #ifndef _BUTTON_H_
 #define _BUTTON_H_
-
 
 //button  class:
 class Button {
