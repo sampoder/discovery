@@ -56,7 +56,7 @@ function draw() {
 }
 
 function drawShapes(energy) {
-  let numShapes = energy * 100;
+  let numShapes = energy * 1000;
   console.log(numShapes);
   for (var i = 0; i < numShapes; i++) {
     switch (currentColourMode) {
