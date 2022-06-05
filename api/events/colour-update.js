@@ -10,7 +10,7 @@ const pusher = new Pusher({
 
 export default async function handler(req, res) {
   await pusher.trigger("main-channel", "colour-update", {
-    colour: req.query.colour,
+    colour: req.query.colour.toLocaleUpperCase(),
   });
   res.send("Success.");
 }
