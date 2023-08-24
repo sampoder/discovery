@@ -2,6 +2,10 @@
 
 Discover the world of colours, maths, waves, the web and more through a generative art display!
 
+![P1088621](https://github.com/sampoder/discovery/assets/39828164/6a670baf-6bac-4dfe-9699-64dd8b1351e5)
+
+![P1099356](https://github.com/sampoder/discovery/assets/39828164/73f0bd41-e3ee-4fec-bc2b-ede3871d4e77)
+
 ## Displays
 
 The main projection: https://discovery-zeta.vercel.app/displays/main.html
